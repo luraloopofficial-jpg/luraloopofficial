@@ -12,7 +12,7 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-1">
             <Link href="/" className="inline-flex items-center group mb-4 hover:opacity-90 transition-opacity">
               <img 
-                src="/logo.svg" 
+                src="/Logo.svg" 
                 alt="LuraLoop Logo" 
                 style={{ width: '190px', height: 'auto' }} 
                 className="object-contain"

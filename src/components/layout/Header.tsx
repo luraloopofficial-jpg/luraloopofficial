@@ -31,7 +31,7 @@ export default function Header() {
         {/* Left: Logo */}
         <Link href="/" className="flex items-center gap-2 group hover:scale-105 transition-transform duration-300">
           <img 
-            src="/logo.svg" 
+            src="/Logo.svg" 
             alt="LuraLoop Logo" 
             style={{ width: '140px', height: '36px' }} 
             className="object-contain"

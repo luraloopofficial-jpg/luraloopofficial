@@ -26,7 +26,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       {children}
 
       {/* Login Modal */}
-      <Modal isOpen={authType === "login"} onClose={closeAuth}>
+      <Modal isOpen={authType === "login"} onClose={closeAuth} maxWidth="max-w-[420px]">
         <div className="text-center mb-8">
           <h2 className="text-2xl font-bold text-brand-white">Sign in to LuraLoop</h2>
           <p className="text-brand-gray text-sm mt-2">Secure Enterprise Access.</p>
@@ -57,7 +57,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
             />
           </div>
           
-          <button className="w-full py-3.5 bg-brand-orange text-brand-black font-bold rounded-xl hover:bg-[#ff8022] hover:scale-[1.02] transition-all mt-2">
+          <button className="w-full py-3.5 bg-brand-orange text-brand-black font-bold rounded-xl hover:bg-[#ff8022] hover:scale-[1.02] transition-all mt-4 shadow-[0_0_20px_rgba(255,107,0,0.2)]">
             Sign In
           </button>
           
@@ -70,7 +70,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       </Modal>
 
       {/* Signup Modal */}
-      <Modal isOpen={authType === "signup"} onClose={closeAuth}>
+      <Modal isOpen={authType === "signup"} onClose={closeAuth} maxWidth="max-w-[420px]">
         <div className="text-center mb-8">
           <h2 className="text-2xl font-bold text-brand-white">Create an Account</h2>
           <p className="text-brand-gray text-sm mt-2">Join the intelligent operational layer.</p>
@@ -96,7 +96,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
             <input type="password" required placeholder="••••••••" className="w-full bg-brand-black/50 border border-white/20 rounded-xl px-4 py-3 text-brand-white focus:outline-none focus:border-brand-orange transition-colors" />
           </div>
           
-          <button className="w-full py-3.5 bg-brand-orange text-brand-black font-bold rounded-xl hover:bg-[#ff8022] hover:scale-[1.02] transition-all mt-2">
+          <button className="w-full py-3.5 bg-brand-orange text-brand-black font-bold rounded-xl hover:bg-[#ff8022] hover:scale-[1.02] transition-all mt-4 shadow-[0_0_20px_rgba(255,107,0,0.2)]">
             Create Account
           </button>
           
