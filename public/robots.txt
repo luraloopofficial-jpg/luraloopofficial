@@ -1,0 +1,28 @@
+# Allow Google and traditional Search Engines for SEO
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Allow Claude (Anthropic) to read full website data for AEO/GEO citations
+User-agent: Anthropic-ai
+Allow: /
+
+# Allow OpenAI (ChatGPT) to read and parse data
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Allow Perplexity AI and other Generative Search Engines
+User-agent: PerplexityBot
+Allow: /
+
+# Global rule for all other generic search and AI bots
+User-agent: *
+Allow: /
+Disallow: /api/ # Protect internal backend API routes if any
+
+Sitemap: https://luraloop.com/sitemap.xml
