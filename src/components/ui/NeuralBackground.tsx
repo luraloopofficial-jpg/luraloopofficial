@@ -9,6 +9,8 @@ interface Particle {
   size: number;
   offset: number;
   speed: number;
+  vx: number;
+  vy: number;
 }
 
 export default function NeuralBackground() {

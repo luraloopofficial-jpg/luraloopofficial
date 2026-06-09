@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { GoogleGenAI } from '@google/genai';
+import { GoogleGenAI, Type } from '@google/genai';
 
 // Initialize the SDK
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
@@ -61,14 +61,14 @@ export async function POST(req: Request) {
                   name: "schedule_discovery_call",
                   description: "Use this tool ONLY when the user explicitly agrees to schedule a discovery call or demo. Do not use it before asking them.",
                   parameters: {
-                    type: "OBJECT",
+                    type: Type.OBJECT,
                     properties: {
                       email: {
-                        type: "STRING",
+                        type: Type.STRING,
                         description: "The user's business email address."
                       },
                       preferred_time: {
-                        type: "STRING",
+                        type: Type.STRING,
                         description: "The user's preferred time for the call."
                       }
                     },

@@ -40,25 +40,15 @@ export default function Header() {
 
         {/* Center: Nav Links */}
         <nav className="hidden lg:flex items-center gap-8">
-          {navLinks.map((link) => 
-            link.action ? (
-              <button
-                key={link.name}
-                onClick={link.action}
-                className="text-sm font-medium text-brand-gray hover:text-brand-white transition-colors"
-              >
-                {link.name}
-              </button>
-            ) : (
-              <Link
-                key={link.name}
-                href={link.href || "#"}
-                className="text-sm font-medium text-brand-gray hover:text-brand-white transition-colors"
-              >
-                {link.name}
-              </Link>
-            )
-          )}
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              href={link.href || "#"}
+              className="text-sm font-medium text-brand-gray hover:text-brand-white transition-colors"
+            >
+              {link.name}
+            </Link>
+          ))}
         </nav>
 
         {/* Right: CTAs */}
