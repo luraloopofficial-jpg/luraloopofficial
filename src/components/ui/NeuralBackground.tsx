@@ -26,7 +26,7 @@ export default function NeuralBackground() {
     canvas.height = height;
 
     const particles: Particle[] = [];
-    const particleCount = width < 768 ? 60 : 120; // Reduced for performance
+    const particleCount = width < 768 ? 25 : 45; // Strictly optimized for zero CPU overhead
     
     for (let i = 0; i < particleCount; i++) {
       const startX = Math.random() * width;
@@ -117,12 +117,10 @@ export default function NeuralBackground() {
           position: "fixed", 
           top: 0, 
           left: 0, 
-          width: "100vw", 
-          height: "100vh", 
-          zIndex: -1, 
-          pointerEvents: "none",
-          backgroundColor: "#0B0B0B",
-          overflow: "hidden"
+          width: "100%", 
+          height: "100%", 
+          zIndex: 0, 
+          pointerEvents: "none"
         }}
       >
         <canvas

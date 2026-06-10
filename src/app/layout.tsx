@@ -105,7 +105,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased text-brand-white selection:bg-brand-orange selection:text-white bg-transparent`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-brand-black text-brand-white selection:bg-brand-orange selection:text-white`}
       >
         <NeuralBackground />
         <SmoothScrolling>
