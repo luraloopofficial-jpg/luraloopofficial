@@ -64,9 +64,9 @@ export default function NeuralBackground() {
         const waveAmplitude = 150;
         const waveY = Math.sin(p.baseX * 0.003 + time + p.offset) * waveAmplitude;
         
-        // Final positions with parallax
+        // Final positions (No scroll parallax so it stays globally visible!)
         p.x = p.baseX;
-        p.y = p.baseY + waveY - (scrollY * 0.25);
+        p.y = p.baseY + waveY;
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
@@ -120,11 +120,23 @@ export default function NeuralBackground() {
 
   return (
     <Suspense fallback={null}>
-      <div className="fixed inset-0 z-0 pointer-events-none bg-[#0B0B0B] overflow-hidden">
+      <div 
+        style={{ 
+          position: "fixed", 
+          top: 0, 
+          left: 0, 
+          width: "100vw", 
+          height: "100vh", 
+          zIndex: -1, 
+          pointerEvents: "none",
+          backgroundColor: "#0B0B0B",
+          overflow: "hidden"
+        }}
+      >
         <canvas
           ref={canvasRef}
           className="block w-full h-full"
-          style={{ opacity: 0.18, willChange: "transform, opacity" }}
+          style={{ opacity: 0.25, willChange: "transform, opacity" }}
         />
       </div>
     </Suspense>
