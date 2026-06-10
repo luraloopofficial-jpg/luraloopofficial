@@ -22,6 +22,10 @@ const faqs = [
   {
     question: "What is the cost of deploying Ziya for our hospital?",
     answer: "The standard deployment setup for the Ziya Patient Agent is ₹75,000 (currently discounted for the first 5 hospitals), with a monthly operations, hosting, and support fee of ₹15,000. This provides full-suite intelligent reception and patient management capabilities."
+  },
+  {
+    question: "Is LuraLoop available in Malayalam?",
+    answer: "Yes. Ziya communicates fluently in Malayalam and English, managing enterprise workflows locally."
   }
 ];
 

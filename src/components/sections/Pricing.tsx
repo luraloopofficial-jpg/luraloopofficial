@@ -52,7 +52,7 @@ export default function Pricing() {
         {/* Pricing Card */}
         <div 
           ref={cardRef}
-          className="relative p-8 md:p-12 rounded-3xl bg-white/5 border border-white/10 overflow-hidden"
+          className="relative p-8 md:p-12 rounded-3xl bg-white/5 border border-white/10 overflow-hidden hover:scale-[1.02] transition-transform duration-300"
           style={{ willChange: "transform, opacity" }}
         >
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand-orange to-transparent" />

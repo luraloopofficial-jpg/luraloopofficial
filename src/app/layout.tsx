@@ -32,13 +32,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://luraloop.com",
+    url: "https://luraloopofficial.vercel.app/",
     siteName: "LuraLoop",
     title: "LuraLoop | Hire The Future",
     description: "An Enterprise AI Automation company acting as an intelligent operational layer on top of current systems with zero data retention.",
     images: [
       {
-        url: "https://luraloop.com/og-image.jpg",
+        url: "https://luraloopofficial.vercel.app/hero-3d.png",
         width: 1200,
         height: 630,
         alt: "LuraLoop Enterprise AI Automation",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "LuraLoop | Enterprise AI Automation",
     description: "Hire The Future. An intelligent operational layer acting securely on top of current enterprise systems.",
-    images: ["https://luraloop.com/og-image.jpg"],
+    images: ["https://luraloopofficial.vercel.app/hero-3d.png"],
   },
   robots: {
     index: true,
@@ -70,12 +70,12 @@ const jsonLd = {
     {
       "@type": "Organization",
       "name": "LuraLoop",
-      "url": "https://luraloop.com",
-      "logo": "https://luraloop.com/logo.png",
-      "description": "Enterprise AI Automation company acting as an intelligent operational layer.",
+      "url": "https://luraloopofficial.vercel.app/",
+      "logo": "https://luraloopofficial.vercel.app/Logo.svg",
+      "description": "LuraLoop is an enterprise AI automation company providing intelligent operational layers for businesses.",
       "sameAs": [
         "https://twitter.com/luraloop",
-        "https://linkedin.com/company/luraloop"
+        "https://github.com/luraloopofficial-jpg"
       ]
     },
     {

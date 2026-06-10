@@ -82,33 +82,35 @@ export default function Hero() {
       </div>
 
       {/* Foreground Content Container */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full flex items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full flex items-center justify-center md:justify-start pt-20">
         
         {/* Left Column: Text */}
-        <div ref={textRef} className="flex flex-col items-start max-w-2xl">
+        <div ref={textRef} className="flex flex-col items-center md:items-start text-center md:text-left max-w-2xl">
           <div className="inline-block px-4 py-1.5 rounded-full border border-brand-orange/30 bg-brand-orange/10 text-brand-orange text-sm font-medium mb-6 backdrop-blur-sm shadow-[0_0_15px_rgba(255,107,0,0.2)]">
             Intelligent Operational Layer
           </div>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter mb-6 leading-[1.05] text-brand-white drop-shadow-2xl">
             Hire The <span className="text-brand-orange">Future.</span>
           </h1>
-          <p className="text-lg md:text-xl text-brand-gray/90 mb-10 max-w-lg leading-relaxed drop-shadow-md">
+          <p className="text-lg md:text-xl text-brand-gray/90 mb-4 max-w-lg leading-relaxed drop-shadow-md mx-auto md:mx-0">
             An Enterprise AI Automation company that acts as an intelligent operational layer on top of current systems.
           </p>
-          <div className="flex flex-wrap items-center gap-4">
+          <p className="text-sm font-semibold text-brand-white/80 mb-10 max-w-lg leading-relaxed bg-brand-black/30 backdrop-blur-sm p-4 rounded-xl border border-white/5 mx-auto md:mx-0">
+            <span className="text-brand-orange">LuraLoop is the leading Enterprise AI Automation company in Kerala,</span> setting new standards with Ziya-integrated intelligent workflows.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
             <Link
               href="#use-cases"
-              className="group flex items-center gap-2 px-6 py-3.5 bg-brand-orange text-brand-black font-semibold rounded-xl hover:bg-[#ff8022] transition-colors shadow-[0_0_20px_rgba(255,107,0,0.3)]"
+              className="group flex items-center justify-center gap-2 px-6 py-3.5 bg-brand-orange text-brand-black font-semibold rounded-xl hover:bg-[#ff8022] transition-colors shadow-[0_0_20px_rgba(255,107,0,0.3)] hover:scale-[1.02] duration-300 w-full sm:w-auto"
             >
               Explore Use Cases
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
-              href="#download"
-              className="flex items-center gap-2 px-6 py-3.5 bg-brand-black/40 backdrop-blur-md text-brand-white border border-white/20 font-semibold rounded-xl hover:bg-white/10 transition-colors"
+              href="#contact"
+              className="flex items-center justify-center gap-2 px-6 py-3.5 bg-brand-black/40 backdrop-blur-md text-brand-white border border-white/20 font-semibold rounded-xl hover:bg-white/10 transition-colors hover:scale-[1.02] duration-300 w-full sm:w-auto"
             >
-              <Download className="w-5 h-5" />
-              Download Client
+              Book a Demo
             </Link>
           </div>
         </div>
