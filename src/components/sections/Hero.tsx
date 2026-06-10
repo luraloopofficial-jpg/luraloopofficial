@@ -4,6 +4,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowRight, Download } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -60,16 +61,24 @@ export default function Hero() {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative w-full min-h-screen overflow-hidden flex items-center pt-20 pb-10">
+    <section ref={containerRef} className="relative w-full min-h-screen overflow-hidden flex items-center pt-20 pb-10 z-10">
       
-      {/* Full-Screen Absolute Background Gradient (letting NeuralBackground show through) */}
+      {/* Full-Screen Absolute Background Image & Gradient grouped for scroll fade-out */}
       <div 
         ref={bgImageRef} 
-        className="absolute inset-0 w-full h-full z-[1] origin-center pointer-events-none"
+        className="absolute inset-0 w-full h-full z-[5] origin-center pointer-events-none"
         style={{ willChange: "transform, opacity" }}
       >
+        <Image 
+          src="/hero-3d.png" 
+          alt="LuraLoop Futuristic Workspace" 
+          fill
+          className="object-cover object-center opacity-80"
+          priority
+          quality={100}
+        />
         {/* Subtle Dark Gradient Overlay for Typography Contrast */}
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-black via-brand-black/80 to-transparent" />
+        <div className="absolute inset-0 z-10 bg-gradient-to-r from-brand-black via-brand-black/80 to-transparent" />
       </div>
 
       {/* Foreground Content Container */}

@@ -44,13 +44,6 @@ export default function NeuralBackground() {
 
     let animationFrameId: number;
     let time = 0;
-    let scrollY = window.scrollY;
-
-    const handleScroll = () => {
-      scrollY = window.scrollY;
-    };
-    
-    window.addEventListener("scroll", handleScroll, { passive: true });
 
     const render = () => {
       time += 0.002;
@@ -114,7 +107,6 @@ export default function NeuralBackground() {
     return () => {
       cancelAnimationFrame(animationFrameId);
       window.removeEventListener("resize", handleResize);
-      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
