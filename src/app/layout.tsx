@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import "./globals.css";
 import SmoothScrolling from "@/components/layout/SmoothScrolling";
 import Header from "@/components/layout/Header";
@@ -10,13 +10,13 @@ import Chatbot from "@/components/ui/Chatbot";
 import { AuthProvider } from "@/components/auth/AuthContext";
 import { AboutProvider } from "@/components/modals/AboutContext";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const plusJakarta = Plus_Jakarta_Sans({
+  variable: "--font-plus-jakarta",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
@@ -102,13 +102,14 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark scroll-smooth">
       <head>
+        <meta name="google-site-verification" content="googled1b481ce22e6f7ec" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-brand-black text-brand-white selection:bg-brand-orange selection:text-white`}
+        className={`${plusJakarta.variable} ${inter.variable} font-sans antialiased bg-brand-black text-brand-white selection:bg-brand-orange selection:text-white`}
       >
         <NeuralBackground />
         <SmoothScrolling>
@@ -116,7 +117,7 @@ export default function RootLayout({
             <AboutProvider>
               <Cursor />
               <Header />
-              <main className="min-h-screen pt-24 pb-16 overflow-hidden relative z-10">
+              <main className="min-h-screen pt-32 pb-24 overflow-hidden relative z-10">
                 {children}
               </main>
               <Footer />

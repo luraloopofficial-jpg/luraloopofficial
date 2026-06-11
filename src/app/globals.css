@@ -5,6 +5,9 @@
   --color-brand-orange: #FF6B00;
   --color-brand-white: #FFFFFF;
   --color-brand-gray: #A0A0A0;
+  
+  --font-sans: var(--font-plus-jakarta), "Inter", sans-serif;
+  --font-mono: var(--font-inter), monospace;
 }
 
 :root {
