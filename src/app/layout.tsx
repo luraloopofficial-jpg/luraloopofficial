@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Inter } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import SmoothScrolling from "@/components/layout/SmoothScrolling";
 import Header from "@/components/layout/Header";
@@ -10,16 +10,14 @@ import Chatbot from "@/components/ui/Chatbot";
 import { AuthProvider } from "@/components/auth/AuthContext";
 import { AboutProvider } from "@/components/modals/AboutContext";
 
-const plusJakarta = Plus_Jakarta_Sans({
-  variable: "--font-plus-jakarta",
+const geistSans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
-  display: "swap",
 });
 
-const inter = Inter({
-  variable: "--font-inter",
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin"],
-  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -111,7 +109,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${plusJakarta.variable} ${inter.variable} font-sans antialiased bg-brand-black text-brand-white selection:bg-brand-orange selection:text-white`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-brand-black text-brand-white selection:bg-brand-orange selection:text-white`}
       >
         <NeuralBackground />
         <SmoothScrolling>
@@ -119,7 +117,7 @@ export default function RootLayout({
             <AboutProvider>
               <Cursor />
               <Header />
-              <main className="min-h-screen pt-32 pb-24 overflow-hidden relative z-10">
+              <main className="min-h-screen pt-24 pb-16 overflow-hidden relative z-10">
                 {children}
               </main>
               <Footer />
