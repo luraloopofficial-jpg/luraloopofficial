@@ -115,14 +115,19 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 perspective-[1000px]">
+        <div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 perspective-[1000px]"
+          onWheel={(e) => e.stopPropagation()}
+          onTouchMove={(e) => e.stopPropagation()}
+          style={{ overscrollBehavior: "contain" }}
+        >
           {sectors.map((sector) => (
             <button
               key={sector.id}
               ref={addToCards}
               onClick={() => setActiveModal(sector.id)}
               className="group relative flex flex-col items-center justify-center p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-brand-orange/50 hover:bg-brand-orange/10 backdrop-blur-md transition-all duration-300 transform hover:-translate-y-2 text-left"
-              style={{ willChange: "transform, opacity" }}
+              style={{ willChange: "transform, opacity", touchAction: "manipulation" }}
             >
               {/* Glow Effect */}
               <div className="absolute inset-0 bg-brand-orange/0 group-hover:bg-brand-orange/5 rounded-3xl transition-colors duration-500 blur-xl" />

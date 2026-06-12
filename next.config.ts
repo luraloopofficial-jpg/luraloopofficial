@@ -2,7 +2,15 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
+    formats: ["image/avif", "image/webp"],
     qualities: [75, 100],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "cdn.sanity.io",
+        pathname: "/images/**",
+      },
+    ],
   },
   async headers() {
     return [
@@ -31,7 +39,16 @@ const nextConfig: NextConfig = {
           },
           {
             key: 'Content-Security-Policy',
-            value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://generativelanguage.googleapis.com",
+            value: [
+              "default-src 'self'",
+              "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://*.sanity.io",
+              "style-src 'self' 'unsafe-inline' https://*.sanity.io",
+              "img-src 'self' data: https: blob: https://cdn.sanity.io",
+              "font-src 'self' data: https://fonts.gstatic.com",
+              "connect-src 'self' https://generativelanguage.googleapis.com https://*.sanity.io https://*.apicdn.sanity.io wss://*.sanity.io",
+              "frame-src 'self' https://*.sanity.io",
+              "worker-src 'self' blob:",
+            ].join('; '),
           }
         ],
       },
@@ -40,3 +57,4 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+

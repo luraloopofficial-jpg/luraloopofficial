@@ -75,6 +75,7 @@ export default function Hero() {
           fill
           className="object-cover object-center opacity-80"
           priority
+          fetchPriority="high"
           quality={100}
         />
         {/* Subtle Dark Gradient Overlay for Typography Contrast */}

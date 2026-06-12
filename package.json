@@ -11,6 +11,9 @@
   "dependencies": {
     "@firecms/neat": "^0.9.0",
     "@google/genai": "^2.8.0",
+    "@portabletext/react": "^6.2.0",
+    "@sanity/image-url": "^2.1.1",
+    "@sanity/vision": "^6.0.0",
     "@studio-freight/react-lenis": "^0.0.47",
     "@tsparticles/engine": "^4.1.3",
     "@tsparticles/react": "^4.1.3",
@@ -22,9 +25,12 @@
     "lenis": "^1.3.23",
     "lucide-react": "^1.17.0",
     "next": "16.2.7",
+    "next-sanity": "^13.1.0",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "sanitize-html": "^2.17.4",
+    "sanity": "^6.0.0",
+    "styled-components": "^6.4.2",
     "tailwind-merge": "^3.6.0"
   },
   "devDependencies": {

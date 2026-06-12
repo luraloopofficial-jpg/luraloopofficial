@@ -24,6 +24,11 @@ export default function Modal({ isOpen, onClose, title, children, maxWidth = "ma
     };
   }, [isOpen]);
 
+  // Stop wheel/touch events inside modal from leaking to Lenis/background
+  const stopPropagation = (e: React.WheelEvent | React.TouchEvent) => {
+    e.stopPropagation();
+  };
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -45,6 +50,8 @@ export default function Modal({ isOpen, onClose, title, children, maxWidth = "ma
             exit={{ opacity: 0, scale: 0.8, y: 20 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
             className={`relative w-full ${maxWidth} bg-brand-black/80 border border-brand-orange/40 rounded-3xl shadow-[0_0_50px_rgba(255,107,0,0.15)] overflow-hidden flex flex-col max-h-[90vh]`}
+            onWheel={stopPropagation}
+            onTouchMove={stopPropagation}
           >
             {/* Header */}
             <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 shrink-0">
@@ -59,8 +66,12 @@ export default function Modal({ isOpen, onClose, title, children, maxWidth = "ma
               </button>
             </div>
 
-            {/* Scrollable Body */}
-            <div className="p-6 sm:p-8 overflow-y-auto custom-scrollbar">
+            {/* Scrollable Body — data-lenis-prevent stops Lenis hijacking scroll inside modal */}
+            <div
+              className="p-6 sm:p-8 overflow-y-auto custom-scrollbar"
+              data-lenis-prevent
+              style={{ overscrollBehavior: "contain", touchAction: "pan-y" }}
+            >
               {children}
             </div>
           </motion.div>

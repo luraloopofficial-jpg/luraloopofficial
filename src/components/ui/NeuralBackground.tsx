@@ -126,7 +126,7 @@ export default function NeuralBackground() {
         <canvas
           ref={canvasRef}
           className="block w-full h-full"
-          style={{ opacity: 0.25, willChange: "transform, opacity" }}
+          style={{ opacity: 0.25, willChange: "transform, opacity", pointerEvents: "none" }}
         />
       </div>
     </Suspense>
