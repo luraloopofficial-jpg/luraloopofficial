@@ -102,7 +102,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark scroll-smooth">
       <head>
-        <meta name="google-site-verification" content="googled1b481ce22e6f7ec" />
+        <meta name="google-site-verification" content="K-ZmHpU-hx-_4TvJ7sI5v3PuCmIRYQN1c3rXAn66wPs" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
